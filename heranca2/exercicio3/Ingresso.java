@@ -9,8 +9,8 @@ public class Ingresso {
         System.out.println(this.valor);
     }
 
-    public Ingresso(double valor) {
-        this.valor = valor;
+    public Ingresso() {
+        this.valor = 40;
     }
 
     public double getValor() {

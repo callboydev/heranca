@@ -9,7 +9,7 @@ package exercicio2;
  *
  * @author USER
  */
-public class Gato {
+public class Gato extends Animal {
     public String mia(){
         return "Miau Miau miau...";
     }

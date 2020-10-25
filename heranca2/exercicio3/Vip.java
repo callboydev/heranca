@@ -12,14 +12,18 @@ package exercicio3;
 public class Vip extends Ingresso{
     protected double adicional;
     
-    public Vip(double valor, double adicional) {
-        super(valor);
-        this.adicional = adicional;
+    public Vip() {
+        this.adicional = 20;
+        this.valor += 20;
+    }
+    
+    public void imprimeValor() {
+        System.out.println(this.valor);
     }
     
     @Override
-    public void imprimeValor() {
-        System.out.println("Valor: " + this.valor + this.adicional);
+    public double getValor() {
+        return this.valor;
     }
 
     public double getAdicional() {

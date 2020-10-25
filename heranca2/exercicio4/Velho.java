@@ -12,9 +12,10 @@ package exercicio4;
 public class Velho extends Imovel{
     protected double desconto;
     
-    public Velho(String endereco, double preco, double desconto) {
+    public Velho(String endereco, double preco) {
         super(endereco, preco);
-        this.desconto = desconto;
+        this.desconto = 10;
+        this.preco -= (this.preco*10)/100;
     }
 
     public double getDesconto() {
