@@ -1,22 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package questao2;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- *
- * @author USER
- */
 public class TesteAnimal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ArrayList<Peixe> peixes = new ArrayList();
-        ArrayList<Mamifero> mamiferos = new ArrayList();
+        ArrayList<Peixe> listaPeixes = new ArrayList();
+        ArrayList<Mamifero> listaMamiferos = new ArrayList();
         
         int opcao = 1;
         while(opcao != 0) {
@@ -30,21 +19,21 @@ public class TesteAnimal {
             
             switch(opcao) {
                 case 1:
-                    System.out.println("Digite o nome do peixe: ");
+                    System.out.println("Nome do PEIXE: ");
                     String nomePeixe = sc.next();
-                    System.out.println("Digite o comprimento do peixe: ");
+                    System.out.println("Comprimento do PEIXE: ");
                     double comprimentoPeixe = sc.nextDouble();
-                    System.out.println("Digite a velocidade do peixe em m/s: ");
+                    System.out.println("Velocidade do PEIXE em m/s: ");
                     double velocidadePeixe = sc.nextDouble();
-                    System.out.println("Digite o número de barbatanas do peixe: ");
+                    System.out.println("Número de barbatanas do PEIXE: ");
                     int barbatanas = sc.nextInt();
-                    System.out.println("Digite o número de caudas do peixe: ");
+                    System.out.println("Número de caudas do PEIXE: ");
                     int caudas = sc.nextInt();
                     
                     Peixe peixe = new Peixe(nomePeixe, comprimentoPeixe, velocidadePeixe, barbatanas, caudas);
-                    peixes.add(peixe);
+                    listaPeixes.add(peixe);
                     
-                    System.out.println("Peixe cadastrado com sucesso!\n");
+                    System.out.println("Peixe cadastrado!\n");
                 break;
                 case 2:
                     System.out.println("Digite o nome do mamifero: ");
@@ -59,25 +48,25 @@ public class TesteAnimal {
                     String alimento = sc.next();
                     
                     Mamifero mamifero = new Mamifero(nomeMamifero, comprimentoMamifero, cor, velocidadeMamifero, alimento);
-                    mamiferos.add(mamifero);
+                    listaMamiferos.add(mamifero);
                     
                     System.out.println("Mamifero cadastrado com sucesso!\n");
                 break;
                 case 3:
-                    if(mamiferos.size() == 0 && peixes.size() == 0) {
+                    if(listaMamiferos.size() == 0 && listaPeixes.size() == 0) {
                         System.out.println("Nenhum animal cadastrado, CADASTRE ANTES SEU ANIMAL :)");
                     } else {
-                        System.out.println("Animais cadastrados: ");
+                        System.out.println("Animais: ");
                         
-                        for(int i = 0; i < mamiferos.size(); i++) {
-                            Mamifero m = mamiferos.get(i);
+                        for(int i = 0; i < listaMamiferos.size(); i++) {
+                            Mamifero m = listaMamiferos.get(i);
                             System.out.println("Mamifero: " + m.getNome());
                         }
                         
                         System.out.println("\n");
                         
-                        for(int i = 0; i < peixes.size(); i++) {
-                            Peixe p = peixes.get(i);
+                        for(int i = 0; i < listaPeixes.size(); i++) {
+                            Peixe p = listaPeixes.get(i);
                             System.out.println("Peixe: " + p.getNome());
                         }
                         
@@ -85,11 +74,11 @@ public class TesteAnimal {
                     }
                 break;
                 case 4:
-                    if(peixes.size() == 0) {
+                    if(listaPeixes.size() == 0) {
                         System.out.println("Nenhum peixe cadastrado..........................");
                     } else {
-                        for(int i = 0; i < peixes.size(); i++) {
-                            Peixe p = peixes.get(i);
+                        for(int i = 0; i < listaPeixes.size(); i++) {
+                            Peixe p = listaPeixes.get(i);
                             System.out.println("Peixe: " + p.getNome());
                         }
                         System.out.println("\n");

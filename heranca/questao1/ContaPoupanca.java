@@ -1,19 +1,11 @@
-package questao1;
-
 public class ContaPoupanca extends ContaBancaria{
     protected int diaRendimento;
     
     public ContaPoupanca(String nome, int numero, float saldo, int dia) {
-        this.nomeCliente = nome;
+        this.diaRendimento = dia;
         this.numeroConta = numero;
         this.saldo = saldo;
-        this.diaRendimento = dia;
-    }
-    
-    public void calcularNovoSaldo(float taxa) {
-        float rendimento = this.getSaldo() * (taxa/100);
-        float novo_saldo = rendimento + this.getSaldo();
-        this.setSaldo(novo_saldo);
+        this.nomeCliente = nome;
     }
 
     public int getDiaRendimento() {
@@ -22,6 +14,12 @@ public class ContaPoupanca extends ContaBancaria{
 
     public void setDiaRendimento(int diaRendimento) {
         this.diaRendimento = diaRendimento;
+    }
+
+    public void calcularNovoSaldo(float taxa) {
+        float rendimento = (this.getSaldo() * (taxa/100));
+        float novo_saldo = rendimento + this.getSaldo();
+        this.setSaldo(novo_saldo);
     }
     
     public void getDados() {

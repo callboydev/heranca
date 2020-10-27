@@ -1,29 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package questao2;
-
-/**
- *
- * @author USER
- */
 public class Animal {
-    protected String nome;
-    protected double comprimento;
+    protected double velocidade;
     protected int numeroPatas;
     protected String cor;
+    protected String nome;
     protected String ambiente;
-    protected double velocidade;
+    protected double comprimento;
 
     public Animal(String nome, double comprimento, String cor, String ambiente, double velocidade) {
         this.nome = nome;
+        this.velocidade = velocidade;
         this.comprimento = comprimento;
-        this.numeroPatas = 4;
         this.cor = cor;
         this.ambiente = ambiente;
-        this.velocidade = velocidade;
+        this.numeroPatas = 4;
     }
 
     public String getNome() {

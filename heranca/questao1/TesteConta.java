@@ -1,5 +1,3 @@
-package questao1;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -24,24 +22,24 @@ public class TesteConta {
             switch(opcao) {
                 case 1:
                     if(contasPoupanca.size() + contasEspecial.size() < 5) {
-                        System.out.println("Digite o nome do cliente: ");
+                        System.out.println("Nome do CLIENTE: ");
                         String nome = sc.next();
 
-                        System.out.println("Digite o número da conta: ");
+                        System.out.println("Número da CONTA: ");
                         int numero = sc.nextInt();
 
-                        System.out.println("Digite o saldo inicial: ");
+                        System.out.println("Saldo INICIAL: ");
                         float saldo = sc.nextFloat();
 
                         int tipo = 0;
                         while(tipo != 1 && tipo != 2) {
-                            System.out.println("Selecione o tipo de conta:\n"
+                            System.out.println("Tipo de CONTA:\n"
                                 + "1 - Poupanca\n"
                                 + "2 - Especial");
                             tipo = sc.nextInt();
 
                             if(tipo == 1) {
-                                System.out.println("Digite o dia de rendimento: ");
+                                System.out.println("Dia de RENDIMENTO: ");
                                 int dia = sc.nextInt();
                                 ContaPoupanca conta = new ContaPoupanca(nome, numero, saldo, dia);
                                 contasPoupanca.add(conta);
@@ -49,24 +47,24 @@ public class TesteConta {
                             } else if(tipo == 2) {
                                 float limite = 0;
                                 while(limite >= 0) {
-                                    System.out.println("Digite o limite (negativo): ");
+                                    System.out.println("LIMITE (negativo): ");
                                     limite = sc.nextFloat();
                                 }
                                 ContaEspecial conta = new ContaEspecial(nome, numero, saldo, limite);
                                 contasEspecial.add(conta);
-                                System.out.println("Conta criada!\n");
+                                System.out.println("Sucesso!\n");
                             }
                         }
                     } else {
-                        System.out.println("5 contas possiveis já cadastradas.");
+                        System.out.println("Limite 4 contas");
                     }
                 break;
                 
                 case 2:
-                    System.out.println("Digite o valor que deseja sacar: ");
+                    System.out.println("Valor: ");
                     float valor = sc.nextFloat();
                     
-                    System.out.println("Digite o número da conta que deseja sacar: ");
+                    System.out.println("Número da CONTA: ");
                     int numeroSacar = sc.nextInt();
                     
                     int sizePoupanca = contasPoupanca.size();
@@ -86,10 +84,10 @@ public class TesteConta {
                 break;
                 
                 case 3:
-                    System.out.println("Digite o valor que deseja depositar: ");
+                    System.out.println("Valor: ");
                     valor = sc.nextFloat();
                     
-                    System.out.println("Digite o número da conta que deseja depositar: ");
+                    System.out.println("Número da CONTA: ");
                     numeroSacar = sc.nextInt();
                     
                     sizePoupanca = contasPoupanca.size();
@@ -108,7 +106,7 @@ public class TesteConta {
                 break;
                 
                 case 4:
-                    System.out.println("Digite o nome do cliente com conta poupanca: ");
+                    System.out.println("Cliente com poupança: ");
                     String nomeBuscar = sc.next();
                     
                     sizePoupanca = contasPoupanca.size();

@@ -1,17 +1,7 @@
-
-package exercicio1;
-
-
 public class Funcionario {
     protected String nome;
     protected String setor;
     protected double salario;
-
-    public Funcionario(String nome, String setor, double salario) {
-        this.nome = nome;
-        this.setor = setor;
-        this.salario = salario;
-    }
 
     public String getNome() {
         return nome;
@@ -23,6 +13,12 @@ public class Funcionario {
 
     public String getSetor() {
         return this.setor;
+    }
+
+    public Funcionario(String nome, String setor, double salario) {
+        this.nome = nome;
+        this.setor = setor;
+        this.salario = salario;
     }
 
     public void setSetor(String setor) {

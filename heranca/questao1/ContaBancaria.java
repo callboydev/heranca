@@ -1,5 +1,3 @@
-package questao1;
-
 public class ContaBancaria {
     protected String nomeCliente;
     protected int numeroConta;
@@ -7,16 +5,16 @@ public class ContaBancaria {
     
     public void sacar(float valor) {
         if(this.saldo - valor < 0) {
-            System.out.println("Você não tem dinheiro suficiente para fazer o saque!\n");
+            System.out.println("Dinheiro insuficiente!!\n");
         } else {
             this.saldo -= valor;
-            System.out.println("Saque de valor " + valor + "\n");
+            System.out.println("Saque de R$" + valor + "\n");
         }
     }
     
     public void depositar(float valor) {
         this.saldo += valor;
-        System.out.println("Deposito de " + valor + " realizado com sucesso\n");
+        System.out.println("Deposito de R$" + valor + "\n");
     }
 
     public String getNomeCliente() {
