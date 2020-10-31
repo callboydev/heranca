@@ -52,21 +52,20 @@ public class TesteAnimal {
                     System.out.println("Mamifero cadastrado!\n");
                 break;
                 case 3:
-                    if(listaMamiferos.size() == 0 && listaPeixes.size() == 0) {
+                    if(listaAnimais.size() == 0) {
                         System.out.println("Nenhum animal cadastrado, CADASTRE ANTES SEU ANIMAL :)");
                     } else {
-                        System.out.println("Animais: ");
+                        System.out.println("Animais cadastrados: ");
                         
                         for(int i = 0; i < listaAnimais.size(); i++) {
                             System.out.println(listaAnimais.get(i).getNome());
                         }
-                      
                     }
                 break;
                 case 4:
                     for(int i = 0; i < listaAnimais.size(); i++) {
                         if(listaAnimais.get(i) instanceof Peixe) {
-                            Peixe p = (Peixe) animais.get(i);
+                            Peixe p = (Peixe) listaAnimais.get(i);
                             System.out.println(p.getNome());
                         }        
                     }
