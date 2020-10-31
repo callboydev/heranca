@@ -62,11 +62,11 @@ public class JogoAdvinhacao {
         if(jogo.obterVencedor() != null) {
             System.out.println("***VENCEDOR*** " + jogo.obterVencedor());
         } else {
-            for(int i = 4; i < 5; i++){
+            for(int i = 4; i < 6; i++){
                 jogo.realizarPergunta(perguntas.get(i), jogador1)
             }
 
-            for(int i = 5; i < 7; i++){
+            for(int i = 4; i < 6; i++){
                 jogo.realizarPergunta(perguntas.get(i), jogador2)
             }
 
