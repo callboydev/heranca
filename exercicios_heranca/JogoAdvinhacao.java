@@ -19,7 +19,6 @@ public class JogoAdvinhacao {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        ArrayList<PerguntaDificil> perguntasDificeis = new ArrayList();
         ArrayList<Pergunta> perguntas = new ArrayList();
         
         for(int i = 0; i < 4; i++) {
@@ -56,19 +55,19 @@ public class JogoAdvinhacao {
             jogo.realizarPergunta(perguntas.get(i), jogador1)
         }
 
-        for(int i = 0; i < 2; i++){
-            jogo.realizarPergunta(perguntas.get(i), jogador2)
+        for(int i = 2; i < 4; i++){
+            jogo.realizarPergunta(perguntas.get(i+1), jogador2)
         }
         
         if(jogo.obterVencedor() != null) {
             System.out.println("***VENCEDOR*** " + jogo.obterVencedor());
         } else {
-            for(int i = 0; i < 2; i++){
-                jogo.realizarPergunta(perguntasDificeis.get(i), jogador1)
+            for(int i = 4; i < 5; i++){
+                jogo.realizarPergunta(perguntas.get(i), jogador1)
             }
 
-            for(int i = 0; i < 2; i++){
-                jogo.realizarPergunta(perguntasDificeis.get(i), jogador2)
+            for(int i = 5; i < 7; i++){
+                jogo.realizarPergunta(perguntas.get(i), jogador2)
             }
 
             if(jogo.obterVencedor() != null) {
