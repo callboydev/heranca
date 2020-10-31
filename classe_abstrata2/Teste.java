@@ -4,8 +4,7 @@ import java.util.Scanner;
 public class Teste {
     public static void main(String[] args) {
         
-        ArrayList<Mulher> listaMulher = new ArrayList();
-        ArrayList<Homem> listaHomem = new ArrayList();
+        ArrayList<Pessoa> listaPessoas = new ArrayList();
 
         Scanner sc = new Scanner(System.in);
         
@@ -29,7 +28,7 @@ public class Teste {
                     double peso = sc.nextDouble();
 
                     Homem homem = new Homem(altura, peso, nome, dataNascimento);
-                    listaHomem.add(homem);
+                    listaPessoas.add(homem);
                 break;
                 case 2:
                     System.out.println("Digite seu nome: ");
@@ -45,54 +44,62 @@ public class Teste {
                     peso = sc.nextDouble();
 
                     Mulher mulher = new Mulher(altura, peso, nome, dataNascimento);
-                    listaMulher.add(mulher);
+                    listaPessoas.add(mulher);
                 break;
                 case 3:
                     System.out.println("Nome para a consulta: ");
                     nome = sc.next();
 
-                    for(int i = 0; i < listaHomem.size(); i++){
-                        Homem h = listaHomem.get(i);
-                        if(h.getNome().equals(nome)){
-                            System.out.println(h.resultIMC());
-                        }
-                    }
-
-                    for(int i = 0; i < listaMulher.size(); i++){
-                        Mulher m = listaMulher.get(i);
-                        if(m.getNome().equals(nome)){
-                            System.out.println(m.resultIMC());
+                    for(int i = 0; i < listaPessoas.size(); i++){
+                        
+                        if(listaPessoas.get(i) instanceof Mulher) {
+                            Mulher m = (Mulher) listaPessoas.get(i);
+                            if(m.getNome().equals(nome)){
+                                System.out.println(m.resultIMC());
+                            }
+                            
+                        } else if(listaPessoas.get(i) instanceof Homem) {
+                            Homem h = (Homem) listaPessoas.get(i);
+                            if(h.getNome().equals(nome)){
+                                System.out.println(h.resultIMC());
+                            }
                         }
                     }
 
                 break;
                 case 4:
-                    for(int i = 0; i < listaHomem.size(); i++){
-                        Homem h = listaHomem.get(i);
-                        System.out.println(h.getNome());
+                    for(int i = 0; i < listaPessoas.size(); i++){
+                        if(listaPessoas.get(i) instanceof Homem) {
+                            Homem h = (Homem) listaPessoas.get(i);
+                            System.out.println(h.getNome());
+                        } 
                     }
                 break;
                 case 5:
-                    for(int i = 0; i < listaMulher.size(); i++){
-                        Mulher m = listaMulher.get(i);
-                        System.out.println(m.getNome());
+                     for(int i = 0; i < listaPessoas.size(); i++){
+                        if(listaPessoas.get(i) instanceof Mulher) {
+                            Mulher m = (Mulher) listaPessoas.get(i);
+                            System.out.println(m.getNome());
+                        } 
                     }
                 break;
                 case 6:
-                    for(int i = 0; i < listaHomem.size(); i++){
-                        Homem h = listaHomem.get(i);
-                        System.out.println(h.getNome() + " - " + h.resultIMC());
+                    for(int i = 0; i < listaPessoas.size(); i++){
+                        if(listaPessoas.get(i) instanceof Homem) {
+                            Homem h = (Homem) listaPessoas.get(i);
+                            System.out.println(h.getNome() + " - " + h.resultIMC());
+                        } 
                     }
                 break;
                 case 7:
-                    for(int i = 0; i < listaHomem.size(); i++){
-                        Homem h = listaHomem.get(i);
-                        System.out.println(h.getNome() + " - " + h.resultIMC());
-                    }
-
-                    for(int i = 0; i < listaMulher.size(); i++){
-                        Mulher m = listaMulher.get(i);
-                        System.out.println(m.getNome() + " - " + m.resultIMC());
+                    for(int i = 0; i < listaPessoas.size(); i++){
+                        if(listaPessoas.get(i) instanceof Mulher) {
+                            Mulher m = (Mulher) listaPessoas.get(i);
+                            System.out.println(m.getNome() + " imc:  " +m.resultIMC());
+                        } else if(listaPessoas.get(i) instanceof Homem) {
+                            Homem h = (Homem) listaPessoas.get(i);
+                            System.out.println(h.getNome() + " imc:  " + h.resultIMC());
+                        }
                     }
                 break;
                 default:
